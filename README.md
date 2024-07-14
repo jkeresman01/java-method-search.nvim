@@ -34,7 +34,7 @@ use {
 
 ## Keymapings ##
 
-Set the keymapings as you see fit, here is ove example:
+Set the keymapings as you see fit, here is one example:
 
 ```lua
 local java_methods = require ("java-method-search")
