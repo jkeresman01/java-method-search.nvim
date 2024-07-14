@@ -1,6 +1,7 @@
 local M = {}
 
 local function get_methods()
+
     local bufnr = vim.api.nvim_get_current_buf()
     local parser = vim.treesitter.get_parser(bufnr, "java")
     local tree = parser:parse()[1]
@@ -41,18 +42,19 @@ function M.search()
 
     require('telescope.pickers').new({}, {
         prompt_title = 'Java Methods',
+
         finder = require('telescope.finders').new_table {
             results = items,
             entry_maker = function(entry)
                 for _, result in ipairs(results) do
                     if result.method_name == entry then
                         return {
-                            value = result,
-                            display = result.method_name,
-                            ordinal = result.method_name,
+                            value       = result,
+                            display     = result.method_name,
+                            ordinal     = result.method_name,
                             method_name = result.method_name,
                             method_text = result.method_text,
-                            range = result.range,
+                            range       = result.range,
                         }
                     end
                 end
@@ -64,6 +66,7 @@ function M.search()
         previewer = require('telescope.previewers').new_buffer_previewer({
             define_preview = function(self, entry)
                 local bufnr = self.state.bufnr
+
                 vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, vim.split(entry.method_text, "\n"))
                 vim.api.nvim_buf_set_option(bufnr, "filetype", "java")
             end,
