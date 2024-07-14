@@ -7,7 +7,7 @@ This Neovim plugin integrates with telescope.nvim and nvim-treesitter to enable 
 ### Installation ###
 * Make sure you have Neovim v0.9.0 or greater. :exclamation:
 * Dependecies: treesiter && telescope && plenary (telescope dep)
-* Install using you package manager
+* Install using you plugin manager
 
 `Vim-Plug`  
 ```lua
