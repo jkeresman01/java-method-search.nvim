@@ -1,10 +1,15 @@
-# java-method-search.nvim
+## The problem :warning: ##
 
-This Neovim plugin integrates with telescope.nvim and nvim-treesitter to enable interactive fuzzy finding and navigation through Java methods within a file.
+You open your favorite editor, Neovim, and navigate to a new Java class you're unfamiliar with. You want to preview all available methods, easily search through them, and navigate to each one for exploration, but this seems impossible. 
+
+## The solution :trophy: ##
+
+This Neovim plugin, Java method search, integrates with telescope.nvim and nvim-treesitter to enable interactive fuzzy finding and navigation through Java methods within a file.
+
 
 [![asciicast](https://asciinema.org/a/0V6bFRxWP7EZNorV8Z0FPfuss.svg)](https://asciinema.org/a/0V6bFRxWP7EZNorV8Z0FPfuss)
 
-### Installation ###
+### Installation :star: ###
 * Make sure you have Neovim v0.9.0 or greater. :exclamation:
 * Dependecies: treesiter && telescope && plenary (telescope dep)
 * Install using you plugin manager
