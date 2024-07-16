@@ -37,7 +37,7 @@ use {
  use 'jkeresman01/java-method-search.nvim'
 ```
 
-## Keymapings ##
+## Keymapings :musical_keyboard: ##
 
 Set the keymapings as you see fit, here is one example:
 
