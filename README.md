@@ -20,7 +20,7 @@ Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter'
 
-Plug 'jkeresman01/maven-test-runner.nvim'
+Plug 'jkeresman01/java-method-search.nvim'
 ```
 
 `Packer`  
