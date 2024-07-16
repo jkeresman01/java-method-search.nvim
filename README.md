@@ -4,7 +4,7 @@ You open your favorite editor, Neovim, and navigate to a new Java class you're u
 
 ## The solution :trophy: ##
 
-This Neovim plugin, Java Maven Test, integrates with telescope.nvim and nvim-treesitter to facilitate interactive fuzzy searching and execution of Java tests within a class.
+This Neovim plugin integrates with telescope.nvim and nvim-treesitter to enable interactive fuzzy finding and navigation through Java methods within a file.
 
 [![asciicast](https://asciinema.org/a/0V6bFRxWP7EZNorV8Z0FPfuss.svg)](https://asciinema.org/a/0V6bFRxWP7EZNorV8Z0FPfuss)
 
