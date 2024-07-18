@@ -44,7 +44,7 @@ Set the keymapings as you see fit, here is one example:
 ```lua
 local java_methods = require ("java-method-search")
 
-vim.keymap.set("n", "<leader>j", function () java_methods.search() end)
+vim.keymap.set("n", "<leader>fm", function () java_methods.search() end)
 ```
 
 
