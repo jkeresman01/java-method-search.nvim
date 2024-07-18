@@ -46,5 +46,10 @@ local java_methods = require ("java-method-search")
 
 vim.keymap.set("n", "<leader>fm", function () java_methods.search() end)
 ```
+***
+
+| Keybind       | Action                                                             |
+|---------------|--------------------------------------------------------------------|
+| `<leader>fm`  | Search through Java methods within a file.                         |
 
 
