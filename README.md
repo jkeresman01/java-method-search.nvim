@@ -13,6 +13,13 @@ This Neovim plugin integrates with telescope.nvim and nvim-treesitter to enable 
 * Dependecies: treesiter && telescope && plenary (telescope dep)
 * Install using you plugin manager
 
+### Functionalities :pick: ###
+
+- [x] Fuzzy find trough all java methods in a class
+- [x] Easily navigate to all java methods in a class
+- [x] Preview all java methods in a class
+
+***
 `Vim-Plug`  
 ```lua
 Plug 'nvim-lua/plenary.nvim'
@@ -36,8 +43,9 @@ use {
 
  use 'jkeresman01/java-method-search.nvim'
 ```
+***
 
-## Keymapings :musical_keyboard: ##
+## Key - mapings :musical_keyboard: ##
 
 Set the keymapings as you see fit, here is one example:
 
@@ -48,7 +56,7 @@ vim.keymap.set("n", "<leader>fm", function () java_methods.search() end)
 ```
 ***
 
-| Keybind       | Action                                                             |
+| Key - map     | Action                                                             |
 |---------------|--------------------------------------------------------------------|
 | `<leader>fm`  | Search through Java methods within a file.                         |
 
