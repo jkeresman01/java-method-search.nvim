@@ -22,14 +22,11 @@ function M.get_java_methods()
                 local method_text =
                     vim.api.nvim_buf_get_lines(bufnr, start_line, end_line + 1, false)
 
-                table.insert(
-                    results,
-                    {
-                        method_name = method_name,
-                        range = { start_line, 0 },
-                        method_text = table.concat(method_text, "\n"),
-                    }
-                )
+                table.insert(results, {
+                    method_name = method_name,
+                    range = { start_line, 0 },
+                    method_text = table.concat(method_text, "\n"),
+                })
             end
         end
     end
