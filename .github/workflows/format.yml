@@ -25,4 +25,4 @@ jobs:
       run: cargo install stylua
 
     - name: Formatting check
-      run: stylua --check lua/ --config-path=.stylua.tomlname: format
+      run: stylua --check lua/ --config-path=.stylua.toml
