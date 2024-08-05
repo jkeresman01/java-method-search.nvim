@@ -8,16 +8,17 @@ This Neovim plugin integrates with telescope.nvim and nvim-treesitter to enable 
 
 [![asciicast](https://asciinema.org/a/0V6bFRxWP7EZNorV8Z0FPfuss.svg)](https://asciinema.org/a/0V6bFRxWP7EZNorV8Z0FPfuss)
 
-### Installation :star: ###
-* Make sure you have Neovim v0.9.0 or greater. :exclamation:
-* Dependecies: treesiter && telescope && plenary (telescope dep)
-* Install using you plugin manager
-
 ### Functionalities :pick: ###
 
 - [x] Fuzzy find trough all java methods in a class
 - [x] Easily navigate to all java methods in a class
 - [x] Preview all java methods in a class
+
+
+### Installation :star: ###
+* Make sure you have Neovim v0.9.0 or greater. :exclamation:
+* Dependecies: treesiter && telescope && plenary (telescope dep)
+* Install using you plugin manager
 
 ***
 `Vim-Plug`  
