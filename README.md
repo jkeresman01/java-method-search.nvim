@@ -15,7 +15,10 @@
 - [The solution](#solution)
 - [Functionalities](#functionalities)
 - [Installation](#installation)
-- [Key - mappings](#key-mappings)
+    - [Vim-Plug](#vimplug)
+    - [Packer](#packer)
+- [Commands](#commands)
+- [Setup](#setup)
 
 ## The problem :warning: <a name="problem"></a>  ##
 
@@ -27,20 +30,35 @@ This Neovim plugin integrates with telescope.nvim and nvim-treesitter to enable 
 
 [![asciicast](https://asciinema.org/a/0V6bFRxWP7EZNorV8Z0FPfuss.svg)](https://asciinema.org/a/0V6bFRxWP7EZNorV8Z0FPfuss)
 
+## Repository structure :open_file_folder: <a name="repo"></a> ##
+```bash
+
+java-method-search.nvim/
+├── LICENSE
+├── lua
+│   └── java-method-search
+│       ├── commands.lua         # Commands exposed to Neovim
+│       ├── init.lu              # Plugin entry pint
+│       ├── java_method.lu       # Mostly UI logic (.. telescope)
+│       └── util.lu              # Utility functions
+└── README.md
+
+```
+
 ### Functionalities :pick: <a name="functionalities"></a> ###
 
 - [x] Fuzzy find trough all java methods in a class
 - [x] Easily navigate to all java methods in a class
 - [x] Preview all java methods in a class
 
-
 ### Installation :star:  <a name="installation"></a> ###
 * Make sure you have Neovim v0.9.0 or greater. :exclamation:
 * Dependecies: treesiter && telescope && plenary (telescope dep)
 * Install using you plugin manager
 
-***
-`Vim-Plug`  
+
+#### Vim plug :star:  <a name="vimplug"></a> ####
+
 ```lua
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -50,7 +68,8 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'jkeresman01/java-method-search.nvim'
 ```
 
-`Packer`  
+#### Packer :star:  <a name="packer"></a> ####
+
 ```lua
 
 use {
@@ -65,19 +84,31 @@ use {
 ```
 ***
 
-## Key - mapings :musical_keyboard: <a name="key-mappings"></a> ##
 
-Set the keymapings as you see fit, here is one example:
+## Commands :musical_keyboard: <a name="commands"></a> ##
+
+Following commands have been exposed to Neovim:
+
+`Commands`  
+```lua
+
+:JavaMethodSearch                  -- Launch picker (select your java method and navigate to it)
+
+```
+
+## Setup :musical_keyboard: <a name="setup"></a> ##
+
+Set the keybindings as you see fit, here is one example:
 
 ```lua
-local java_methods = require ("java-method-search")
+ equire ("java-method-search").setup()
 
-vim.keymap.set("n", "<leader>fm", function () java_methods.search() end)
+vim.keymap.set("n", "<leader>jms", "<CMD>JavaMethodSearch")
+
 ```
 ***
 
 | Key - map     | Action                                                             |
 |---------------|--------------------------------------------------------------------|
 | `<leader>fm`  | Search through Java methods within a file.                         |
-
 
