@@ -9,26 +9,17 @@ local config = require("telescope.config")
 
 local M = {}
 
--- Helper function to retrieve and prepare Java method names for display
-local function get_java_method_names(results)
-    local items = {}
-    for _, result in ipairs(results) do
-        table.insert(items, result.method_name)
-    end
-    return items
-end
-
-local function create_entry_maker(results)
+local function create_entry_maker(java_methods_details)
     return function(entry)
-        for _, result in ipairs(results) do
-            if result.method_name == entry then
+        for _, java_method_details in ipairs(java_methods_details) do
+            if java_method_details.method_name == entry then
                 return {
-                    value = result,
-                    display = result.method_name,
-                    ordinal = result.method_name,
-                    method_name = result.method_name,
-                    method_text = result.method_text,
-                    range = result.range,
+                    value = java_method_details,
+                    display = java_method_details.method_name,
+                    ordinal = java_method_details.method_name,
+                    method_name = java_method_details.method_name,
+                    method_text = java_method_details.method_text,
+                    range = java_method_details.range,
                 }
             end
         end
@@ -40,17 +31,6 @@ local function define_preview(self, entry)
 
     vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, vim.split(entry.method_text, "\n"))
     vim.api.nvim_buf_set_option(bufnr, "filetype", "java")
-end
-
-local function on_select_method(prompt_bufnr)
-    actions.close(prompt_bufnr)
-    local selection = action_state.get_selected_entry()
-
-    if selection then
-        local range = selection.range
-        vim.api.nvim_win_set_cursor(0, { range[1] + 1, range[2] })
-        vim.cmd("normal! zz")
-    end
 end
 
 function M.search()
@@ -74,7 +54,9 @@ function M.search()
 
             attach_mappings = function(prompt_bufnr)
                 actions.select_default:replace(function()
-                    on_select_method(prompt_bufnr)
+                    actions.close(prompt_bufnr)
+                    local selected_java_method = action_state.get_selected_entry()
+                    util.move_to_selected_java_method(selected_java_method)
                 end)
                 return true
             end,
