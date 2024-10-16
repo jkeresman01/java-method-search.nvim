@@ -31,8 +31,8 @@ This Neovim plugin integrates with telescope.nvim and nvim-treesitter to enable 
 [![asciicast](https://asciinema.org/a/0V6bFRxWP7EZNorV8Z0FPfuss.svg)](https://asciinema.org/a/0V6bFRxWP7EZNorV8Z0FPfuss)
 
 ## Repository structure :open_file_folder: <a name="repo"></a> ##
-```bash
 
+```bash
 java-method-search.nvim/
 ├── LICENSE
 ├── lua
@@ -42,7 +42,6 @@ java-method-search.nvim/
 │       ├── java_method.lu       # Mostly UI logic (.. telescope)
 │       └── util.lu              # Utility functions
 └── README.md
-
 ```
 
 ### Functionalities :pick: <a name="functionalities"></a> ###
@@ -90,9 +89,9 @@ use {
 Following commands have been exposed to Neovim:
 
 `Commands`  
-```lua
 
-:JavaMethodSearch                  -- Launch picker (select your java method and navigate to it)
+```lua
+:JavaMethodSearch      -- Launch picker (select your java method and navigate to it)
 
 ```
 
@@ -101,11 +100,12 @@ Following commands have been exposed to Neovim:
 Set the keybindings as you see fit, here is one example:
 
 ```lua
- equire ("java-method-search").setup()
+require ("java-method-search").setup()
 
 vim.keymap.set("n", "<leader>jms", "<CMD>JavaMethodSearch")
 
 ```
+
 ***
 
 | Key - map     | Action                                                             |
