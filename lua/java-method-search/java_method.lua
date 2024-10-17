@@ -11,7 +11,7 @@ local M = {}
 
 local function create_entry_maker(java_methods_details)
     return function(entry)
-        for _, java_method_details in ipairs(java_methods_details) do
+        for _, java_method_details in pairs(java_methods_details) do
             if java_method_details.method_name == entry then
                 return {
                     value = java_method_details,
