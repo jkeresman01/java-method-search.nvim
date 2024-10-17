@@ -35,7 +35,7 @@ end
 
 function M.search()
     local java_methods = util.get_java_methods()
-    local java_method_names = get_java_method_names(java_methods)
+    local java_method_names = util.get_java_method_names(java_methods)
 
     pickers
         .new({}, {
